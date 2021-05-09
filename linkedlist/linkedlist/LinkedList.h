@@ -9,14 +9,15 @@ namespace gll
         Node* previous;
     };
 
-    class LinkedList
+    class LinkedList final
     {
     public:
         LinkedList();
         Node* first();
         Node* last();
-        Node* withIndex(int ind);
-        Node* withValue(int ind, Node* st);
+        Node* operator [] (int ind);
+        Node* findFirst(int ind);
+        Node* findLast(int ind);
         int returnValue(Node* nd);
         void pushFront(int val);
         void pushBack(int val);
