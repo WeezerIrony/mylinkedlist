@@ -1,2 +1,44 @@
 ﻿  Source.cpp
-  linkedlist.vcxproj -> C:\Users\Billy Scranner\source\repos\linkedlist\Debug\linkedlist.exe
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(5,5): error C2653: 'gll': is not a class or namespace name
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(5,10): error C2065: 'LinkedList': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(5,21): error C2146: syntax error: missing ';' before identifier 'lk'
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(5,21): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(6,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(8,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(10,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(12,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(14,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(16,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(16,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(17,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(17,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(18,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(18,14): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(20,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(20,14): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(22,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(22,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(23,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(23,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(24,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(24,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(25,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(26,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(28,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(28,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(29,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(29,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(30,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(30,14): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(32,5): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(32,14): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(34,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(34,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(35,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(35,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(36,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(36,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(37,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(37,33): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(38,18): error C2065: 'lk': undeclared identifier
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\Source.cpp(38,33): error C2065: 'lk': undeclared identifier
