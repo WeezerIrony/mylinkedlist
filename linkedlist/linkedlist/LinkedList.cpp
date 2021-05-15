@@ -67,19 +67,28 @@ namespace gll {
 
     LinkedList::iterator LinkedList::operator[] (int ind) {
         auto* iter = head;
-        for (int ctr = 0; ctr != ind; ctr++) { if (iter == nullptr) { break; } iter = iter->next; }
+        for (int ctr = 0; ctr != ind; ctr++) {
+            if (iter == nullptr) { break; }
+            iter = iter->next;
+        }
         return iterator(iter);
     }
 
     LinkedList::iterator LinkedList::findFirst(int val) {
         auto* iter = head;
-        while (iter->Value != val) { if (iter == nullptr) { break; } iter = iter->next; }
+        while (iter->Value != val) {
+            if (iter == nullptr) { break; }
+            iter = iter->next;
+        }
         return iterator(iter);
     }
 
     LinkedList::iterator LinkedList::findLast(int val) {
         auto* iter = tail;
-        while (iter->Value != val) { if (iter == nullptr) { break; } iter = iter->previous; }
+        while (iter->Value != val) {
+            if (iter == nullptr) { break; }
+            iter = iter->previous;
+        }
         return iterator(iter);
     }
 
@@ -101,14 +110,28 @@ namespace gll {
 
     void LinkedList::pushFront(int val) {
         auto* newEl = new Node(val);
-        if (head != nullptr) { newEl->next = head;  head->previous = newEl; head = newEl;}
-        else { head = newEl; tail = head; }
+        if (head != nullptr) { 
+            newEl->next = head;  
+            head->previous = newEl; 
+            head = newEl;
+        }
+        else {
+            head = newEl;
+            tail = head;
+        }
     }
 
     void LinkedList::pushBack(int val) {
         auto* newEl = new Node(val);
-        if (tail != nullptr) { newEl->previous = tail; tail->next = newEl; tail = newEl; }
-        else { tail = newEl; head = tail; }
+        if (tail != nullptr) {
+            newEl->previous = tail;
+            tail->next = newEl;
+            tail = newEl;
+        }
+        else {
+            tail = newEl;
+            head = tail;
+        }
     }
 
     void LinkedList::insertAfter(iterator it, int val) {
