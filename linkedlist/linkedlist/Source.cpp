@@ -38,5 +38,11 @@ int main()
     std::cout << "Element 0 is " << lk.returnValue(lk[0]) << ", expecting 78" << std::endl;
     std::cout << "Element 1 is " << lk.returnValue(lk[1]) << ", expecting 45" << std::endl;
     std::cout << "Element 2 is " << lk.returnValue(lk[2]) << ", expecting 42" << std::endl;
+    lk.insertAfter(lk.findFirst(45), 48);
+    // current list: 78 45 48 42
+    std::cout << "Element 2 is " << lk.returnValue(lk[2]) << ", expecting 48" << std::endl;
+    lk.insertBefore(lk.findFirst(45), 48);
+    // current list: 78 48 45 48 42
+    std::cout << "Element 1 is " << lk.returnValue(lk[1]) << ", expecting 48" << std::endl;
     return 0;
 }
