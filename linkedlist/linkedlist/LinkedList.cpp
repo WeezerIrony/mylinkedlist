@@ -14,6 +14,64 @@ namespace gll {
         previous = nullptr;
     }
 
+    LinkedList::iterator::iterator(Node* elem) {
+        element = elem;
+    }
+
+    const Node& LinkedList::iterator::operator-> () const {
+
+    }
+
+    Node& LinkedList::iterator::operator-> () {
+
+    }
+
+    const Node& LinkedList::iterator::operator* () const {
+        const Node& lnk = *element;
+        return lnk;
+    }
+
+    Node& LinkedList::iterator::operator* () {
+        Node& lnk = *element;
+        return lnk;
+    }
+
+    LinkedList::iterator& LinkedList::iterator::operator++ () {
+        element = element->next;
+        return *this;
+    }
+
+    LinkedList::iterator LinkedList::iterator::operator++ (int) {
+        iterator iter(element);
+        element = element->next;
+        return iter;
+    }
+
+    LinkedList::iterator& LinkedList::iterator::operator-- () {
+        element = element->previous;
+        return *this;
+    }
+
+    LinkedList::iterator LinkedList::iterator::operator-- (int) {
+        iterator iter(element);
+        element = element->previous;
+        return iter;
+    }
+
+    bool LinkedList::iterator::operator== (const iterator& rhs) const {
+        if (element == rhs.element) { return true; }
+        else { return false; }
+    }
+
+    bool LinkedList::iterator::operator!= (const iterator& rhs) const {
+        if (element != rhs.element) { return true; }
+        else { return false; }
+    }
+
+    bool LinkedList::iterator::operator< (const iterator& rhs) const {
+
+    }
+
     Node* LinkedList::first() {
         return head;
     }
@@ -22,7 +80,7 @@ namespace gll {
         return tail;
     }
 
-    Node* LinkedList::operator [] (int ind) {
+    Node* LinkedList::operator[] (int ind) {
         auto* iter = head;
         for (int ctr = 0; ctr != ind; ctr++) { if (iter == nullptr) { break; } iter = iter->next; }
         return iter;
@@ -66,5 +124,39 @@ namespace gll {
         auto* newEl = new Node(val);
         if (tail != nullptr) { newEl->previous = tail; tail->next = newEl; tail = newEl; }
         else { tail = newEl; head = tail; }
+    }
+
+    void LinkedList::insertAfter(Node* nd, int val) {
+        if (nd == nullptr) { throw std::runtime_error("Null pointer exception"); }
+        if (nd == tail) { pushBack(val); }
+        else {
+            auto* newEl = new Node(val);
+            newEl->previous = nd;
+            newEl->next = nd->next;
+            nd->next->previous = newEl;
+            nd->next = newEl;
+        }
+    }
+
+    void LinkedList::insertBefore(Node* nd, int val) {
+        if (nd == nullptr) { throw std::runtime_error("Null pointer exception"); }
+        if (nd == head) { pushFront(val); }
+        else {
+            auto* newEl = new Node(val);
+            newEl->next = nd;
+            newEl->previous = nd->previous;
+            nd->previous->next = newEl;
+            nd->previous = newEl;
+        }
+    }
+
+    LinkedList::iterator LinkedList::begin() {
+        iterator iter(head);
+        return iter;
+    }
+
+    LinkedList::iterator LinkedList::end() {
+        iterator iter(tail);
+        return iter;
     }
 }
