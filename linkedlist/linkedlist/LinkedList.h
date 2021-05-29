@@ -24,10 +24,7 @@ namespace gll
     public:
         class iterator final {
         public:
-            iterator(Node* elem, int ind) {
-                element = elem;
-                index = ind;
-            }
+            iterator(Node* elem, int ind) : element(elem), index(ind) {}
 
             const T* operator-> () const {
                 return &element->Value;
@@ -82,8 +79,7 @@ namespace gll
             }
 
             bool operator< (const iterator& rhs) const {
-                if (index < rhs.index) return true;
-                else return false;
+                return index < rhs.index;
             }
 
         private:
