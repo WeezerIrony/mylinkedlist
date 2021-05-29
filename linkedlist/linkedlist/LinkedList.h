@@ -191,15 +191,12 @@ namespace gll
 
         void erase(iterator it) {
             Node* nd = it.element;
-            if (nd == nullptr) {
-                throw std::runtime_error("Null pointer exception");
-            } else {
-                if (nd != tail) nd->next->previous = nd->previous;
-                if (nd != head) nd->previous->next = nd->next;
-                if (nd == head) head = nd->next;
-                if (nd == tail) tail = nd->previous;
-                delete nd;
-            }
+            if (nd == nullptr) throw std::runtime_error("Null pointer exception");
+            if (nd != tail) nd->next->previous = nd->previous;
+            if (nd != head) nd->previous->next = nd->next;
+            if (nd == head) head = nd->next;
+            if (nd == tail) tail = nd->previous;
+            delete nd;
             size--;
         }
 
