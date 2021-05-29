@@ -10,6 +10,10 @@ struct customStructure final {
     }
 };
 
+struct testStructure final {
+    float field;
+};
+
 int main()
 {
     gll::LinkedList<int> lk;
@@ -48,6 +52,11 @@ int main()
 
     for (auto c : cl)
         std::cout << c;
+
+    gll::LinkedList<testStructure> list;
+    list.pushBack(testStructure{ 1 });
+    auto begin = list.begin();
+    std::cout << begin->field;
 
     return 0;
 }

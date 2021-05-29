@@ -1,1 +1,3 @@
-﻿  linkedlist.vcxproj -> C:\Users\Billy Scranner\source\repos\linkedlist\Debug\linkedlist.exe
+﻿  Source.cpp
+C:\Users\Billy Scranner\source\repos\linkedlist\linkedlist\LinkedList.h(116): warning C4715: 'gll::LinkedList<int>::operator[]': not all control paths return a value
+  linkedlist.vcxproj -> C:\Users\Billy Scranner\source\repos\linkedlist\Debug\linkedlist.exe

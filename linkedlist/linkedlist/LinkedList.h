@@ -20,16 +20,22 @@ namespace gll
         };
         Node* head{ nullptr };
         Node* tail{ nullptr };
+        int size{ 0 };
     public:
         class iterator final {
         public:
-            iterator(Node* elem) {
+            iterator(Node* elem, int ind) {
                 element = elem;
+                index = ind;
             }
 
-            //const T& operator-> () const {} 
+            const T* operator-> () const {
+                return &element->Value;
+            } 
 
-            //T& operator-> () {} 
+            T* operator-> () {
+                return &element->Value;
+            }
 
             const T& operator* () const {
                 return element->Value;
@@ -41,23 +47,27 @@ namespace gll
 
             iterator& operator++ () {
                 element = element->next;
+                index++;
                 return *this;
             }
 
             iterator operator++ (int) {
                 iterator iter(element);
                 element = element->next;
+                index++;
                 return iter;
             }
 
             iterator& operator-- () {
                 element = element->previous;
+                index--;
                 return *this;
             }
 
             iterator operator-- (int) {
                 iterator iter(element);
                 element = element->previous;
+                index--;
                 return iter;
             }
 
@@ -71,10 +81,14 @@ namespace gll
                 else return false;
             }
 
-            //bool operator< (const iterator& rhs) const;
+            bool operator< (const iterator& rhs) const {
+                if (index < rhs.index) return true;
+                else return false;
+            }
 
         private:
             Node* element;
+            int index;
             friend class LinkedList;
         };
 
@@ -87,6 +101,10 @@ namespace gll
         }
 
         LinkedList() = default;
+
+        int getSize() const {
+            return size;
+        }
 
         T& operator[] (int ind) {
             auto iter = begin();
@@ -107,7 +125,7 @@ namespace gll
         }
 
         iterator findLast(const T& val) {
-            auto iter = iterator(tail);
+            auto iter = iterator(tail, (getSize()-1));
             while (*iter != val) {
                 if (iter.element == nullptr) break;
                 --iter;
@@ -130,6 +148,7 @@ namespace gll
                 head = newEl;
                 tail = head;
             }
+            size++;
         }
 
         void pushBack(const T& val) {
@@ -143,6 +162,7 @@ namespace gll
                 tail = newEl;
                 head = tail;
             }
+            size++;
         }
 
         void insertAfter(iterator it, const T& val) {
@@ -156,6 +176,7 @@ namespace gll
                 nd->next->previous = newEl;
                 nd->next = newEl;
             }
+            size++;
         }
 
         void insertBefore(iterator it, const T& val) {
@@ -169,6 +190,7 @@ namespace gll
                 nd->previous->next = newEl;
                 nd->previous = newEl;
             }
+            size++;
         }
 
         void erase(iterator it) {
@@ -181,14 +203,15 @@ namespace gll
                 if (nd == tail) tail = nd->previous;
                 delete nd;
             }
+            size--;
         }
 
         iterator begin() {
-            return iterator(head);
+            return iterator(head, 0);
         }
 
         iterator end() {
-            return iterator(nullptr);
+            return iterator(nullptr, getSize());
         }
     };
 }
