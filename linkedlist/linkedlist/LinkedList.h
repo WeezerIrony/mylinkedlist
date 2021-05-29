@@ -139,8 +139,7 @@ namespace gll
                 newEl->next = head;
                 head->previous = newEl;
                 head = newEl;
-            }
-            else {
+            } else {
                 head = newEl;
                 tail = head;
             }
@@ -153,8 +152,7 @@ namespace gll
                 newEl->previous = tail;
                 tail->next = newEl;
                 tail = newEl;
-            }
-            else {
+            } else {
                 tail = newEl;
                 head = tail;
             }
@@ -164,8 +162,9 @@ namespace gll
         void insertAfter(iterator it, const T& val) {
             Node* nd = it.element;
             if (nd == nullptr) throw std::runtime_error("Null pointer exception");
-            if (nd == tail) pushBack(val);
-            else {
+            if (nd == tail) {
+                pushBack(val);
+            } else {
                 auto* newEl = new Node(val);
                 newEl->previous = nd;
                 newEl->next = nd->next;
@@ -178,8 +177,9 @@ namespace gll
         void insertBefore(iterator it, const T& val) {
             Node* nd = it.element;
             if (nd == nullptr) throw std::runtime_error("Null pointer exception");
-            if (nd == head) pushFront(val);
-            else {
+            if (nd == head) {
+                pushFront(val);
+            } else {
                 auto* newEl = new Node(val);
                 newEl->next = nd;
                 newEl->previous = nd->previous;
@@ -191,8 +191,9 @@ namespace gll
 
         void erase(iterator it) {
             Node* nd = it.element;
-            if (nd == nullptr) throw std::runtime_error("Null pointer exception");
-            else {
+            if (nd == nullptr) {
+                throw std::runtime_error("Null pointer exception");
+            } else {
                 if (nd != tail) nd->next->previous = nd->previous;
                 if (nd != head) nd->previous->next = nd->next;
                 if (nd == head) head = nd->next;
